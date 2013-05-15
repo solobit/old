@@ -21,7 +21,11 @@
     "i18next": "~1.6.7",
     "node-gettext": "~0.2.11",
     "better-require": "0.0.2",
-    "node-minify": "~0.7.3"
+    "node-minify": "~0.7.3",
+    "yaml": "~0.2.3",
+    "natural": "~0.1.21",
+    "cson": "~1.4.1",
+    "lawyer": "~0.1.0"
   },
   "devDependencies": {
     "ender": "1.0.1",

@@ -606,61 +606,6 @@ QueryEngine / Backbone modellen
             verzameling: (query) -> @getCollection('documents').findAllLive(query).toJSON()
 
 
-
-### Publieke toegang
-
-Exporteer het explaar van (the instance, concrete realization of) het type
-`Object` (class/type/supertype/base class) dat we net vastgesteld hebben, naar
-de scope die voor overige modules toegankelijk is.
+Expose scope
 
     module.exports      = docpadConfig
-
-    i18n                = require 'i18next'
-    cs                  = require 'coffee-script'
-    compressor          = require 'node-minify'
-
-
-    i18Config: {
-        preload:            ['nl-NL']
-        lng:                'nl-NL'
-        fallbackLng:        false #'en'
-        load:               'current'
-        detectLngQS:        'taal' 
-        useCookie:          true
-        debug:              true
-        keyseparator:       '::'
-        nsseparator:        ':::'
-        resGetPath:         '../locales/__lng__/__ns__.json'
-
-        ns:
-            #namespaces:        ['app', 'buttons']
-            namespaces:         ['app']
-            defaultNs:          'app'
-    }
-
-Do a file system synchronous read upon oneself. This gives us all source code
-including this piece of code and text. We don't really have reflective
-properties available in JS other than `.toString()` anyway.
-> `((?))` How sane can we stay? What alternatives? Include exclude stuff?
-
-
-    litcoffee   = fs.readFileSync(@file_location, 'utf-8')
-    educated    = cs.helpers.invertLiterate
-    compiled    = cs.compile educated(litcoffee), {bare: on}
-
-    fs.writeFile @path_compiled, compiled, 'utf-8', (err) ->
-        log err if err
-
-Compression of the final resulting JavaScript, after being transformed from
-`.litcoffee` compiled to intermediate `.js` and now, finally, ready to be
-compressed (minified) using UglifyJS. We break the convention with web
-components of naming the file with a `.min` inside the name because docpad
-expects a certain name (docpad) of one of these types (.js .coffee .json .cson).
-
-    new compressor.minify
-        type:       'uglifyjs'
-        fileIn:     @path_compiled
-        fileOut:    @path_minified
-        callback: (err) -> throw err if err
-
-Thanks for listening
