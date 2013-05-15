@@ -1,0 +1,64 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * “Share your knowledge. It is a way to achieve immortality.” 
+ *  ― Dalai Lama XIV
+ *
+ */
+@charset 'UTF-8';
+*
+.veld {
+  clear: both;
+  margin-bottom: 5px;
+  text-align: right;
+  width: 370px;
+}
+.veld.geslaagd {
+  color: #7fc028;
+}
+.veld.geslaagd input {
+  color: #7fc028;
+  border-color: #7fc028;
+}
+.veld.geslaagd input:focus {
+  -moz-box-shadow: 0 0 5px rgba(127,192,40,0.7);
+  -webkit-box-shadow: 0 0 5px rgba(127,192,40,0.7);
+  -o-box-shadow: 0 0 5px rgba(127,192,40,0.7);
+  -ms-box-shadow: 0 0 5px rgba(127,192,40,0.7);
+  box-shadow: 0 0 5px rgba(127,192,40,0.7);
+  behavior: url("/pie/pie.htc");
+  border: 1px solid #7ba543;
+  outline: none !important;
+}
+.veld.waarschuwing {
+  color: #7a6a42;
+}
+.veld.waarschuwing input {
+  color: #7a6a42;
+  border-color: #7a6a42;
+}
+.veld.waarschuwing input:focus {
+  -moz-box-shadow: 0 0 5px rgba(122,106,66,0.7);
+  -webkit-box-shadow: 0 0 5px rgba(122,106,66,0.7);
+  -o-box-shadow: 0 0 5px rgba(122,106,66,0.7);
+  -ms-box-shadow: 0 0 5px rgba(122,106,66,0.7);
+  box-shadow: 0 0 5px rgba(122,106,66,0.7);
+  behavior: url("/pie/pie.htc");
+  border: 1px solid #70664c;
+  outline: none !important;
+}
+.veld.fout {
+  color: #e31741;
+}
+.veld.fout input {
+  color: #e31741;
+  border-color: #e31741;
+}
+.veld.fout input:focus {
+  -moz-box-shadow: 0 0 5px rgba(227,23,65,0.7);
+  -webkit-box-shadow: 0 0 5px rgba(227,23,65,0.7);
+  -o-box-shadow: 0 0 5px rgba(227,23,65,0.7);
+  -ms-box-shadow: 0 0 5px rgba(227,23,65,0.7);
+  box-shadow: 0 0 5px rgba(227,23,65,0.7);
+  behavior: url("/pie/pie.htc");
+  border: 1px solid #bf3b56;
+  outline: none !important;
+}

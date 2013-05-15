@@ -1,0 +1,64 @@
+{
+  "name": "tredius-corporate",
+  "version": "0.0.5",
+  "description": "Tredius corporate web site",
+  "main": "docpad.coffee",
+  "private": true,
+  "preferGlobal": false,
+  "dependencies": {
+    "docpad": "6.x",
+    "docpad-plugin-cachr": "2.x",
+    "docpad-plugin-coffeekup": "2.x",
+    "docpad-plugin-coffeescript": "2.x",
+    "docpad-plugin-cson": "2.x",
+    "docpad-plugin-marked": "2.x",
+    "docpad-plugin-partials": "2.x",
+    "docpad-plugin-services": "2.x",
+    "docpad-plugin-stylus": "2.x",
+    "prompt": "~0.2.9",
+    "enhanced-require": "~0.5.0-beta5",
+    "cluster-live": "0.0.3",
+    "i18next": "~1.6.7",
+    "node-gettext": "~0.2.11",
+    "better-require": "0.0.2"
+  },
+  "devDependencies": {
+    "ender": "1.0.1",
+    "URIjs": "~1.10.2",
+    "chai": "1.6.x",
+    "mocha": "1.9.x",
+    "docco": "0.6.x",
+    "biscotto": "*",
+    "grunt": "~0.4.1",
+    "cluster": "~0.7.7"
+  },
+  "scripts": {
+    "test": "echo Fout! Geen test script gedefineerd. && exit 1",
+    "start": "echo Fout! Geen start script gedefineerd. && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/solobit/customers.git"
+  },
+  "author": "Solobit",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "185909b228cc42fa2e409a49dc1e6587dd3adf4a",
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "doc": "extra/documentatie",
+    "man": "extra/handleiding",
+    "example": "extra/voorbeelden"
+  },
+  "keywords": [
+    "accountancy",
+    "belastingen",
+    "pensioen",
+    "adviseurs",
+    "detachering",
+    "loonadminstratie",
+    "juridische",
+    "diensten"
+  ]
+}

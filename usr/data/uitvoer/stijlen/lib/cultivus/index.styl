@@ -1,0 +1,220 @@
+/* Cultivus: A Post-Pre-Processor Library
+ *
+ * Purpose: chainstrap the whole shebang the easiest way out of the box.
+ *
+ * “And a new philosophy emerged called quantum physics, which suggest
+ *  that the individual’s function is to inform and be informed. You
+ *  really exist only when you’re in a field sharing and exchanging
+ *  information. You create the realities you inhabit.” 
+ *  ― Timothy Leary, Chaos & Cyber Culture
+ * 
+ * Useful shortcuts:
+ *
+ * > https://github.com/LearnBoost/stylus/blob/master/docs/operators.md
+ *
+ */
+
+
+
+
+/* Overridable defaults 
+ *
+ * The existential operator of `?=` allows us to define variables in
+ * scripts, up-front (and in any language that compiles to JS really)
+ * and have those variables set from within style sheets such as this
+ * one.
+ *
+ * Some examples
+ *
+ *     rootdir     ?= '../../'
+ *     language    ?= 'en|nl'
+ *     img-path    ?= '/media/afbeeldingen'
+ *     images      ?= img-path
+ *     
+ *     // resolves image url relative paths
+ *     image(path)
+ *         url(join('/', images, path))
+ */
+
+// custom image base path for roots mixins
+img-path            = '/media/afbeeldingen/'
+
+// grid system settings (http://semantic.gs)
+$grid-column-width  = 80px
+$grid-gutter-width  = 0
+$grid-column-count  = 12
+
+
+
+
+/*
+ * Conditional Assignments ( ?= and := )
+ *
+ * The conditional assignment operator ?= (aliased as :=) lets us 
+ * define variables without clobbering old values (if present). This
+ * operator expands to an is defined binary operation within a ternary.
+ */
+language            := 'nl_NL'
+
+/* Backwards compatibility
+ *
+ * fallbacks; progressive enhancement; shims
+ *
+ */
+support-for-ie      := true
+
+// vendor prefixes
+vendors             := webkit moz o ms official
+
+// progressive internet explorer (http://css3pie.com/)
+pie-enabled         := false unless support-for-ie
+pie-path            := '/pie/pie.htc'
+
+
+/* Localized quantifiers (semantic names)
+ *
+ *
+ *
+ */
+
+/* Localized quantifiers
+ *
+ */
+$range-sizes = (xxl 65) (xl 40) (l 36) (ml 32) (m 28) (n 22) (s 18) (xs 16) (xxs 14) (xxxs 11)
+
+/* Quantifier Mixin: Size
+ * ---------------------------------------------------------------------
+ *
+ * WARNING! Applies for each key/value-pair a class matching rule that
+ * changes size
+ * 
+ */
+sizes(range = $range-sizes)
+    for key, val in range
+        .size-{key}
+            font-size val
+
+
+// Color chart
+primary-color   = red
+hilight-color   = purple
+
+// Semantic color maps override
+white           = #ffffff
+black           = #363636
+yellow          = #7A6A42
+gold            = #b88d74
+turquoise       = #6CBBB8
+
+purple          = #47427A
+light-purle     = #6664a0
+
+blue            = #0183b5
+light-blue      = #0183b5
+dark-blue       = #403e6b
+
+red             = #e31741
+light-red       = #6b4c39
+
+brown           = #6b4c39
+light-brown     = #b88c74
+
+grey            = #e0e0e0
+light-grey      = #f8f8f8
+dark-grey       = #919191
+
+orange          = #F2A34F
+green           = #7FC028
+
+
+// Site colors
+default-color   = color is defined ? color : white
+
+// Color range
+
+
+
+// Non-localized
+
+/* Font families
+ *
+ */
+open-sans       = 'Open Sans', sans-serif
+dosis           = 'Dosis', sans-serif
+
+helvetica-neue  = "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif
+helvetica       = "Helvetica Neue", Helvetica, Arial, sans-serif
+georgia         = Georgia, Cambria, "Times New Roman", Times, serif
+lucidia-grande  = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
+monospace       = unquote("'Bitstream Vera Sans Mono', Consolas, Courier, monospace")
+verdana         = Verdana, Geneva, sans-serif
+
+// default font stack
+font-stack      ?= open-sans
+font-size       ?= 14
+font-color      ?= black
+
+
+
+/* Compatibility (limited) and support progressive enhancement
+//default-color-h1-main      = brown
+//default-color-h1-alternate = purple
+//default-color-h2-main      = light-brown
+//default-color-h2-alternate = blue
+
+*/
+
+
+
+
+
+/*
+// Import the full library of generated, vendor prefixed, pure CSS
+// animations.
+animate true
+default true
+library true
+levelup true
+steriod true
+*/
+
+// @import 'settings'
+
+
+@import 'i18n/' + language
+
+@import 'reset'
+@import 'vendor'
+@import 'utilities'
+@import 'gradients'
+@import 'interaction'
+@import 'positions'
+@import 'typography'
+@import 'code'
+@import 'ui'
+@import 'buttons'
+@import 'forms'
+@import 'tables'
+@import 'grid'
+
+
+//@import 'animation'
+
+/* Framework Mixin (loads all default styles)
+   ---------------------------------------------------------------------
+*/
+
+// ? added by supersym ? missing ?
+
+framework()
+    //global-reset() // ?
+    //normalize()  // ?
+    base()
+    typography()
+    forms()
+    buttons()
+    code-blocks()
+    tables()
+    fields()
+
+
