@@ -1,0 +1,3 @@
+[submodule "usr/lib/cultivus"]
+	path = usr/lib/cultivus
+	url = https://github.com/solobit/cultivus

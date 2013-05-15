@@ -390,8 +390,9 @@ internationaal gelegen zijn *((..))*
 
                 contact:          'info@tredius.nl'
 
-                lang:             () -> process.env.LANG
-                taal:             'xml:lang': 'nl'
+                landcode:         'nl'
+
+                taal:             { 'xml:lang': 'nl' }
 
                 essentie: egaliseer "
 
@@ -422,7 +423,6 @@ als een string met kernwoorden gescheiden door comma's opgegeven worden.
                 zelfstandigheid
                 "
 
-
                 googleanalytics:  'UA-39413290-1'
 
                 techniek: egaliseer "
@@ -443,8 +443,11 @@ als een string met kernwoorden gescheiden door comma's opgegeven worden.
                 "
 
                 support:
+
                     beheerder:      'Solobit'
+
                     emailadres:     'rob.jentzema@gmail.com'
+
                     servicelijn:    '013-5906677'
 
 ## Client-side browser JavaScript
@@ -494,6 +497,8 @@ andere in het volgende:
 ### Vormgeving
 
 Hier komt een stukje over stijlen die gebruikt zijn.
+TODO: automatisch toevoegen van random voor cache tijdens development fase en niet comprimeren (volatile).
+Deze wel compressen (bladen) abstracten naar eigen pagina ((T))
 
                 stijl:
 
@@ -505,13 +510,11 @@ Hier komt een stukje over stijlen die gebruikt zijn.
                     "
 
 
-TODO: automatisch toevoegen van random voor cache tijdens development fase en niet comprimeren.
 
                     volatile: [
                         '/stijlen/algemeen.css' + '?' + new Date().getTime() / 1000
                     ]
 
-Deze wel compressen
 
                     bladen: [
                         '/stijlen/algemeen.css' + '?' + new Date().getTime() / 1000
@@ -551,9 +554,6 @@ Veel gebruikte snelkoppelingen / hyperlinks
 ### (Web 3.0) Vocabularies of web ontologies
 
                 vocabulaire: {'xmlns:s'     : 'http://schema.org/'
-
-
-
                             , 'xmlns:foaf'  : 'http://xmlns.com/foaf/0.1/'
                             , 'xmlns:xsd'   : 'http://www.w3.org/2001/XMLSchema#'
                             , 'xmlns:v'     : 'http://rdf.data-vocabulary.org/#'
@@ -561,11 +561,10 @@ Veel gebruikte snelkoppelingen / hyperlinks
                             , 'xmlns:wn'    : 'http://xmlns.com/wordnet/1.6/'}
 
 
+Vimeo en mail API
+
             getVimeoUri: (id) ->
                 return "http://player.vimeo.com/video/#{id}?api=1&amp;player_id=VideoSpeler-#{id}&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=e31741"
-
-
-Samenstellen van mail API address voor 'post'
 
             getMailUri: ({id,ds}) ->
 
@@ -588,9 +587,7 @@ Samenstellen en encoden van mail API URI
                 mlid    = encodeURIComponent "&MailingListID=#{id}"
                 dsid    = encodeURIComponent "&DatasetID=#{ds}"
 
-Closure
-
-                api + sid + mlid + dsid + b64 + func
+                api + sid + mlid + dsid + b64 + func # <-- closure
 
 Daadwerkelijke pad achterhalen
 
@@ -606,8 +603,6 @@ Daadwerkelijke pad achterhalen
 
 QueryEngine / Backbone modellen
 
-        collections:
-        
             verzameling: (query) -> @getCollection('documents').findAllLive(query).toJSON()
 
 

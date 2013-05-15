@@ -164,9 +164,7 @@ docpadConfig = {
       development: 'http://solobit.github.io/tredius',
       auteur: 'Solobit &amp; Edberry Creative',
       contact: 'info@tredius.nl',
-      lang: function() {
-        return process.env.LANG;
-      },
+      landcode: 'nl',
       taal: {
         'xml:lang': 'nl'
       },
@@ -254,9 +252,7 @@ docpadConfig = {
       link = this.site.snelkoppelingen[naam];
       anker = "<a href=\"" + link.url + "\" title=\"" + link.titel + "\" class=\"" + (link.cssKlasse || '') + "\">" + link.tekst + "</a>";
       return anker;
-    }
-  },
-  collections: {
+    },
     verzameling: function(query) {
       return this.getCollection('documents').findAllLive(query).toJSON();
     }
