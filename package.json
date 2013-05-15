@@ -20,7 +20,8 @@
     "cluster-live": "0.0.3",
     "i18next": "~1.6.7",
     "node-gettext": "~0.2.11",
-    "better-require": "0.0.2"
+    "better-require": "0.0.2",
+    "node-minify": "~0.7.3"
   },
   "devDependencies": {
     "ender": "1.0.1",

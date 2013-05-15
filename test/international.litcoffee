@@ -1,6 +1,12 @@
 
 # Internationalization library for JavaScript and Node.JavaScript
+Als voorbeeld overgebleven
 
+        collections:
+
+            pages: -> @getCollection('documents').findAllLive({pageOrder:$exists:true},[pageOrder:1])
+
+        }
 
 So what we do is to have a special internationalize st
 
