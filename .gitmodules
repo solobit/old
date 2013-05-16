@@ -1,3 +1,6 @@
 [submodule "usr/lib/cultivus"]
 	path = usr/lib/cultivus
 	url = https://github.com/solobit/cultivus
+[submodule "usr/lib/wisp"]
+	path = usr/lib/wisp
+	url = https://github.com/clojens/wisp

@@ -25,7 +25,17 @@
     "yaml": "~0.2.3",
     "natural": "~0.1.21",
     "cson": "~1.4.1",
-    "lawyer": "~0.1.0"
+    "lawyer": "~0.1.0",
+    "consolidate": "~0.9.1",
+    "moment": "~2.0.0",
+    "keypress": "~0.1.0",
+    "nconf": "~0.6.7",
+    "eventemitter2": "~0.4.11",
+    "event-stream": "~3.0.14",
+    "eyespect": "~0.1.8",
+    "node-colorfactory": "~0.1.2",
+    "prettyjson": "~0.8.1",
+    "cli-table": "~0.2.0"
   },
   "devDependencies": {
     "ender": "1.0.1",
@@ -35,7 +45,9 @@
     "docco": "0.6.x",
     "biscotto": "*",
     "grunt": "~0.4.1",
-    "cluster": "~0.7.7"
+    "cluster": "~0.7.7",
+    "benchmark": "~1.0.0",
+    "microtime": "~0.3.3"
   },
   "scripts": {
     "test": "echo Fout! Geen test script gedefineerd. && exit 1",
